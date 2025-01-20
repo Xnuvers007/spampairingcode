@@ -1,0 +1,21 @@
+{
+  "name": "kpbotwa",
+  "version": "1.0.0",
+  "description": "Testing bot whatsapp",
+  "main": "basic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Xnuvers007",
+  "license": "ISC",
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.9",
+    "file-system": "^1.2.2",
+    "link-preview-js": "^3.0.13",
+    "pino": "^9.6.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+}
