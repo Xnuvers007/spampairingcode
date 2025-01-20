@@ -27,25 +27,8 @@ async function connectToWhatsApp() {
             } catch (error) {
                 console.log(chalk.red('Gagal mengirim pairing code:', error));
             }
-        }, 5000); // Masukin berapa detik, 5 detik = 5000
+        }, 3000); // Mengirim pairing code setiap 5 detik (5000 ms)
     }
-
-    sock.ev.on('connection.update', (update) => {
-        const { connection, lastDisconnect } = update;
-        if (connection === 'close') {
-            const shouldReconnect = lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut;
-            if (shouldReconnect) {
-                console.log(chalk.yellow('Mencoba menghubungkan ulang ke WhatsApp...'));
-                connectToWhatsApp();
-            } else {
-                console.log(chalk.red('Sesi habis. Hapus folder "sessions" untuk login ulang.'));
-            }
-        } else if (connection === 'open') {
-            console.log(chalk.green('\nTerhubung ke WhatsApp'));
-            loggedNumber = sock.user.id.split('@')[0].split(':')[0];
-            console.log(`Kamu berhasil login dengan nomor: ${loggedNumber} \n`);
-        }
-    });
 
     sock.ev.on('creds.update', saveCreds);
 }
