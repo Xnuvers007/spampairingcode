@@ -24,7 +24,7 @@ async function connectToWhatsApp() {
 
     console.log(chalk.bold('\n=== Mengirim Pairing Code ke Nomor WhatsApp ==='));
     console.log(chalk.cyan('Nomor WhatsApp target:'), chalk.yellow(targetNumber));
-    console.log(chalk.cyan('Interval pengiriman pairing code:'), chalk.yellow(timeinterval + ' detik'));
+    console.log(chalk.cyan('Interval pengiriman pairing code:'), chalk.yellow(timeinterval + ' milidetik'));
     console.log(chalk.cyan('Interval pengiriman pairing code:'), chalk.yellow(timeinterval / 1000 + ' detik'));
     
 
